@@ -1,15 +1,19 @@
-const express = require("express");
-// swagger ui
-const swaggerjsdoc = require("swagger-jsdoc");
-const swaggerui = require("swagger-ui-express");
-const mongoose = require("mongoose");
-const cors = require("cors");
-const connectDB = require('./config/dbConn.js');
-require("dotenv").config
-const bodyParser = require("body-parser");
-const corsOptions = require("./config/corsOptions.js")
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import bodyParser from "body-parser";
+import { createClient } from "redis/dist/index.js";
 
-const swaggerSpecs = require("./docs/swagger.js")
+import corsOptions from "./config/corsOptions.js";
+import connectDB from "./config/dbConn.js";
+import swaggerSpecs from "./docs/swagger.js"; // swagger specs
+import swaggerui from "swagger-ui-express"; // swagger ui
+
+const swaggerjsdoc = require("swagger-jsdoc");
+
+require("dotenv").config
+
+
 
 const {createClient} = require("redis");
 
