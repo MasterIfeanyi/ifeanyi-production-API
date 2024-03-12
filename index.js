@@ -56,7 +56,7 @@ app.use(bodyParser.json());
 app.use(cors(corsOptions));
 
 
-app.use("/home", routes)
+app.use("/home", router)
 
 
 // the route for api documentation.
