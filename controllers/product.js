@@ -15,14 +15,14 @@ const getProducts = async (req, res) => {
 
 const getProductByName = async(req, res) => {
     const {name} = req.params;
-
+    const cacheKey = name;
     let result;
 
     
     try {
         
         // use the key to get data from the cache
-        const cachedData = await redis.get("cachedData");
+        const cachedData = await client.get(cacheKey);
 
         // If data exists in the cache, return it
         if(cachedData) {
@@ -33,10 +33,10 @@ const getProductByName = async(req, res) => {
             if (result?.length === 0 || !result) {
                 return res.status(200).send("API returned an empty array");
             }
-            await client.set(species, JSON.stringify(result));
+            await client.set(cacheKey, JSON.stringify(result));
         }
 
-        res.json(result);
+        res.status(200).json(result);
 
     } catch (error) {
         console.error(error);
