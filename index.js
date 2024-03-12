@@ -4,18 +4,14 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import { createClient } from "redis/dist/index.js";
 
-import corsOptions from "./config/corsOptions.js";
-import connectDB from "./config/dbConn.js";
-import swaggerSpecs from "./docs/swagger.js"; // swagger specs
+import {corsOptions} from "./config/corsOptions.js";
+import {connectDB} from "./config/dbConn.js";
+import {swaggerSpecs} from "./docs/swagger.js"; // swagger specs
 import swaggerui from "swagger-ui-express"; // swagger ui
 import swaggerjsdoc from "swagger-jsdoc";
 
 
 require("dotenv").config
-
-
-
-const {createClient} = require("redis");
 
 
 // redis port
