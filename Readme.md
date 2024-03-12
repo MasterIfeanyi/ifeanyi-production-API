@@ -29,3 +29,27 @@ How to properly export a function and import the function in another file.
 ```
 
 [How to import and export ES6](https://blog.stackademic.com/a-guide-to-es6-import-and-export-usage-in-node-js-b32a707fa103)
+
+
+### Redis server error
+
+**Error**
+
+```Error Error: connect ECONNREFUSED ::1:6379```
+
+**Solution** 
+
+
+
+Remember to turn on the redis server. 
+
+
+open `redis-cli.exe` 
+
+```
+redis-cli ping
+```
+
+If it returns "PONG", Redis is running. If it returns "Could not connect to Redis" or "Connection refused", then Redis is not running.
+
+[Redis server error](https://www.dragonflydb.io/error-solutions/could-not-connect-to-redis-at-127-0-0-1-6379-connection-refused)
