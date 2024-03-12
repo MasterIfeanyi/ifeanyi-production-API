@@ -1,4 +1,4 @@
-import Products from "../model/product";
+import {Products} from "../model/product.js";
 import redis from "redis";
 import {client} from "../index.js";
 
@@ -99,4 +99,4 @@ const deleteProductByName = async(req, res) => {
 }
 
 
-module.exports = {getProducts, getProductByName, deleteProductByName, createProduct, deleteAllProducts, updateAProduct}; 
+export const productsController =  {getProducts, getProductByName, deleteProductByName, createProduct, deleteAllProducts, updateAProduct}; 

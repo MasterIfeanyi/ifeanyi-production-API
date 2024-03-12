@@ -12,7 +12,7 @@ import swaggerjsdoc from "swagger-jsdoc";
 
 import 'dotenv/config';
 
-
+import {router} from "./routes/route.js"
 
 
 
@@ -56,7 +56,7 @@ app.use(bodyParser.json());
 app.use(cors(corsOptions));
 
 
-app.use("/home", require("./routes/route.js"))
+app.use("/home", routes)
 
 
 // the route for api documentation.

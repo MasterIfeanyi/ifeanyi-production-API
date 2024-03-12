@@ -17,4 +17,4 @@ const productSchema = new Schema({
 });
 
 // create a collection and attach the product schema
-module.exports = mongoose.model("Product", productSchema);
+export const Products = mongoose.model("Product", productSchema);
