@@ -1,8 +1,7 @@
-const express = require('express');
-const router = express.Router();
-const productsController = require("../controllers/product")
+import express from "express";
+export const router = express.Router();
 
-
+import productsController from "../controllers/product.js";
 
 
 /**
@@ -260,4 +259,3 @@ paths:
 // router.post("/insertMany", productsController.createManyProducts);
 
 
-module.exports = router;
