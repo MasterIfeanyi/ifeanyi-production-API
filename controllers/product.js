@@ -1,6 +1,7 @@
-const Products = require("../model/product"); // ->this line
-const redis = require("redis");
-const {client} = require("../index.mjs")
+import Products from "../model/product";
+import redis from "redis";
+import {client} from "../index.js";
+
 
 const getProducts = async (req, res) => {
     const results = await Products.find({});

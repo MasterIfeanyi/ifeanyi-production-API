@@ -8,8 +8,8 @@ import corsOptions from "./config/corsOptions.js";
 import connectDB from "./config/dbConn.js";
 import swaggerSpecs from "./docs/swagger.js"; // swagger specs
 import swaggerui from "swagger-ui-express"; // swagger ui
+import swaggerjsdoc from "swagger-jsdoc";
 
-const swaggerjsdoc = require("swagger-jsdoc");
 
 require("dotenv").config
 

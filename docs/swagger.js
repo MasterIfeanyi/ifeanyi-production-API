@@ -1,12 +1,12 @@
-const swaggerjsdoc = require("swagger-jsdoc");
+import swaggerjsdoc from "swagger-jsdoc"
 
 const options = {
     definition: {
         openapi: "3.0.0",
         info: {
-            title: "Simple Products API",
+            title: "Products API",
             version: "1.0.0",
-            description: 'API Documentation for simple products API',
+            description: 'API Documentation for products API',
             contact: {
                 name: 'Chima Ifeanyi',
                 email: 'chimaifeanyi29@gmail.com'
