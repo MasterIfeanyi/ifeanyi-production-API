@@ -27,3 +27,5 @@ How to properly export a function and import the function in another file.
  import {allowedOrigins} from "./allowedOirgins.js"
 
 ```
+
+[How to import and export ES6](https://blog.stackademic.com/a-guide-to-es6-import-and-export-usage-in-node-js-b32a707fa103)
