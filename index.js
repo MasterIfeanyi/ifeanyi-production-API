@@ -10,8 +10,8 @@ import {swaggerSpecs} from "./docs/swagger.js"; // swagger specs
 import swaggerui from "swagger-ui-express"; // swagger ui
 import swaggerjsdoc from "swagger-jsdoc";
 
+import 'dotenv/config';
 
-require("dotenv").config
 
 
 // redis port
