@@ -4,11 +4,34 @@ import {client} from "../index.js";
 
 
 const getProducts = async (req, res) => {
-    const results = await Products.find({});
-    if (result?.length === 0 || !result) {
-        return res.sendStatus(404)
+
+    let result;
+
+    try{
+        // use the key to get data from the cache
+        const cachedData = await client.get("cachedData");
+
+        // If data exists in the cache, return it
+        if(cachedData) {
+            result = JSON.parse(cachedData);
+        }  else {
+            
+            result = await Products.find({});
+            
+            if (result?.length === 0 || !result) {
+                return res.status(200).send("API returned an empty array");
+            }
+
+            await client.set("cachedData", JSON.stringify(result));
+        }
+
+        res.status(200).json(result);
+
+    } catch(error) {
+        console.error(error);
+        res.status(404).send("Data unavailable");
     }
-    res.json(results);
+
 }
 
 
@@ -97,6 +120,8 @@ const deleteProductByName = async(req, res) => {
     if (!results) return res.status(200).json({ "message": "No results found" });
     res.status(204).json({"message": "deleted"});
 }
+
+
 
 
 export const productsController =  {getProducts, getProductByName, deleteProductByName, createProduct, deleteAllProducts, updateAProduct}; 

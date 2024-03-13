@@ -214,9 +214,9 @@ router.delete("/:name", productsController.deleteProductByName);
  * 
  */
 
-
-
 router.delete("/", productsController.deleteAllProducts);
+
+
 
 
 // openapi: 3.0.0
@@ -254,8 +254,3 @@ paths:
         '500':
           description: Internal server error
  */
-
-
-// router.post("/insertMany", productsController.createManyProducts);
-
-

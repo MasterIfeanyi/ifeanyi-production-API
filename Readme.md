@@ -53,3 +53,13 @@ redis-cli ping
 If it returns "PONG", Redis is running. If it returns "Could not connect to Redis" or "Connection refused", then Redis is not running.
 
 [Redis server error](https://www.dragonflydb.io/error-solutions/could-not-connect-to-redis-at-127-0-0-1-6379-connection-refused)
+
+
+### Dotenv 
+
+How to handle `dotenv` in your node.js code.
+
+```javascript
+import dotenv from 'dotenv';
+dotenv.config();
+```
