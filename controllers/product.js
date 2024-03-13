@@ -9,14 +9,16 @@ const getProducts = async (req, res) => {
 
     try{
         // use the key to get data from the cache
-        const cachedData = await client.get("cachedData");
+        const cachedData = await client.get("new key");
 
         // If data exists in the cache, return it
         if(cachedData) {
             result = JSON.parse(cachedData);
         }  else {
             
-            result = await Products.find({});
+            result = await Products.find();
+
+            console.log(result)
             
             if (result?.length === 0 || !result) {
                 return res.status(200).send("API returned an empty array");
@@ -87,7 +89,7 @@ const updateAProduct = async (req, res) => {
 
 
     if (product?.length === 0 || !product) {
-        return res.status(204).json({ "message": `No user matches an ID ${id}.`});
+        return res.status(204).json({ "message": `No document matches ${name}.`});
     }
 
     
