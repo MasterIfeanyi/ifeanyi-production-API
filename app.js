@@ -41,12 +41,10 @@ app.use(express.json())
 connectDB(); 
 
 
-// port that the server is listening on.
-const port = 3500;
 
 
 // middleware to handle url encoded data
-// app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
 
 // built-in middleware for json
 app.use(bodyParser.json());

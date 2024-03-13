@@ -1,6 +1,6 @@
 import {Products} from "../model/product.js";
 import redis from "redis";
-import {client} from "../index.js";
+import {client} from "../app.js";
 
 
 const getProducts = async (req, res) => {
