@@ -63,3 +63,27 @@ How to handle `dotenv` in your node.js code.
 import dotenv from 'dotenv';
 dotenv.config();
 ```
+
+Explaining the dockerfile
+
+```dockerfile
+
+FROM node:20-alpine // It instructs Docker to use a pre-built image containing Node.js version 20. This indicates that the base image is built on Alpine Linux, resulting in a smaller and more efficient Docker image.
+
+LABEL maintainer="chimaifeanyi" // provide information about the image
+
+WORKDIR /app // this will create a folder called app inside the image - 
+
+COPY package*.json ./ // It copies the package.json file and potentially other matching files from your local project directory into the root directory (app) of the Docker image being built.
+
+RUN npm install // this will install project dependencies in the container.
+
+COPY . . // copy everything from our local project to work directory (app) in the docker image.
+
+CMD ["node", "index.js"] // this is the command that will be used, when a container is created from the image
+
+// when you start a container from this image, it will run the command (node index.js) to start the application.
+
+EXPOSE 3500 // this tells docker that the nodejs application is running on port 3500 within the container
+
+```
