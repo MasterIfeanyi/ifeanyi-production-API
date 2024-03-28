@@ -16,10 +16,23 @@ import {router} from "./routes/route.js"
 
 // redis port
 const REDIS_PORT = 6379;
+const REDIS_HOST = `127.0.0.1`;
 
 // create redis client
-export const client = createClient();
+// export const client = createClient({
+//     host: REDIS_HOST,
+//     port: REDIS_PORT
+// });
+// export const client = createClient("6379", "127.0.0.1");
 
+export const client = createClient({
+    socket: {
+        port: 6379,
+        host: "redis"
+    }
+});
+
+// export const client = createClient();
 
 
 (async () => { 

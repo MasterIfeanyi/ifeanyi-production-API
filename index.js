@@ -6,7 +6,7 @@ import app from './app.js'
 const server = http.createServer(app)
 
 // port that the server is listening on.
-const port = 3500;
+const port = 4000;
 
 // our server is listening on port 3000
 mongoose.connection.once("open", () => {
